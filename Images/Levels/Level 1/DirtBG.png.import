@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc34cuc50as8f"
-path="res://.godot/imported/tex_metal_corner_outer.png-6ea6aecab21ef2cdfa9c20ae8389ee06.ctex"
+uid="uid://bym4ndcufo3yr"
+path="res://.godot/imported/DirtBG.png-c8ef62dafd101fabfce77028bd1b2b2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://examples/sharp_corner_tapering/assets/tex_metal_corner_outer.png"
-dest_files=["res://.godot/imported/tex_metal_corner_outer.png-6ea6aecab21ef2cdfa9c20ae8389ee06.ctex"]
+source_file="res://Images/Levels/Level 1/DirtBG.png"
+dest_files=["res://.godot/imported/DirtBG.png-c8ef62dafd101fabfce77028bd1b2b2d.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

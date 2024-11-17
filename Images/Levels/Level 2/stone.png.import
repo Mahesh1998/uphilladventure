@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdnfaf3bslk38"
-path="res://.godot/imported/tex_metal_taper_corner_right.png-75d13fe99bb8e540489390ee64c63ea5.ctex"
+uid="uid://fv4pp5njr6uq"
+path="res://.godot/imported/stone.png-e8a9ebfa8d6849f3ed08ddf779070064.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://examples/sharp_corner_tapering/assets/tex_metal_taper_corner_right.png"
-dest_files=["res://.godot/imported/tex_metal_taper_corner_right.png-75d13fe99bb8e540489390ee64c63ea5.ctex"]
+source_file="res://Images/Levels/Level 2/stone.png"
+dest_files=["res://.godot/imported/stone.png-e8a9ebfa8d6849f3ed08ddf779070064.ctex"]
 
 [params]
 

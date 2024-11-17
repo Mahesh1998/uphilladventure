@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyjomns3lurid"]
 
 [ext_resource type="Texture2D" uid="uid://dopurkig0gpa0" path="res://Images/Pickups/Coin5.png" id="1_630iu"]
-[ext_resource type="FontFile" uid="uid://dnrhx64lwcpeg" path="res://fredoka-one.one-regular.ttf" id="2_sdu12"]
+[ext_resource type="FontFile" uid="uid://dnrhx64lwcpeg" path="res://Fonts/fredoka-one.one-regular.ttf" id="2_sdu12"]
 [ext_resource type="Texture2D" uid="uid://bw2e3j7nt4b6b" path="res://Images/Pickups/Fuel.png" id="3_3wabq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kc3r4"]

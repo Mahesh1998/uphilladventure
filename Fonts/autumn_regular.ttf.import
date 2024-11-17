@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dnrhx64lwcpeg"
-path="res://.godot/imported/fredoka-one.one-regular.ttf-402dd73774a9d208dd1850c32a533414.fontdata"
+uid="uid://blcj01fh83f1v"
+path="res://.godot/imported/autumn_regular.ttf-216c6548f88d0e41ff5cc52940736ece.fontdata"
 
 [deps]
 
-source_file="res://fredoka-one.one-regular.ttf"
-dest_files=["res://.godot/imported/fredoka-one.one-regular.ttf-402dd73774a9d208dd1850c32a533414.fontdata"]
+source_file="res://Fonts/autumn_regular.ttf"
+dest_files=["res://.godot/imported/autumn_regular.ttf-216c6548f88d0e41ff5cc52940736ece.fontdata"]
 
 [params]
 

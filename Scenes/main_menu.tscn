@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://dry7g0hqc34m7"]
+
+[ext_resource type="Script" path="res://Code/main_menu.gd" id="1_hdbpn"]
+[ext_resource type="Texture2D" uid="uid://kw5352e7oitm" path="res://Themes/gradient_bg.tres" id="1_yudu0"]
+[ext_resource type="PackedScene" uid="uid://bg1rpqjq1o106" path="res://Scenes/level_button.tscn" id="2_4ktgl"]
+[ext_resource type="Script" path="res://Code/level_data.gd" id="3_vjn8s"]
+[ext_resource type="Texture2D" uid="uid://cd6ns6d0ru8k" path="res://Images/Levels/Level 1/thumb_level_1.png" id="4_g6j5h"]
+[ext_resource type="Texture2D" uid="uid://dbbqfe1opc1i0" path="res://Images/Levels/Level 2/thumb_level_2.png" id="5_ofe34"]
+
+[sub_resource type="Resource" id="Resource_yj2r2"]
+script = ExtResource("3_vjn8s")
+id = "Level 1"
+title = "Level 1"
+description = ""
+thumbnail = ExtResource("4_g6j5h")
+scene_path = "res://Scenes/levels/level_1.tscn"
+
+[sub_resource type="Resource" id="Resource_s03yt"]
+script = ExtResource("3_vjn8s")
+id = "Level 2"
+title = "Level 2"
+description = ""
+thumbnail = ExtResource("5_ofe34")
+scene_path = "res://Scenes/levels/level_2.tscn"
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_hdbpn")
+
+[node name="CanvasLayerBG" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayerBG"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yudu0")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CanvasLayerUI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayerUI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 124.0
+grow_horizontal = 2
+text = "Uphill Adventure"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelVersion" type="Label" parent="CanvasLayerUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -164.0
+offset_right = -33.0
+offset_bottom = 124.0
+grow_horizontal = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "v1.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayerUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlowContainer" type="FlowContainer" parent="CanvasLayerUI/CenterContainer"]
+custom_minimum_size = Vector2(1320, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+
+[node name="LevelButton" parent="CanvasLayerUI/CenterContainer/FlowContainer" instance=ExtResource("2_4ktgl")]
+layout_mode = 2
+level_data = SubResource("Resource_yj2r2")
+
+[node name="LevelButton2" parent="CanvasLayerUI/CenterContainer/FlowContainer" instance=ExtResource("2_4ktgl")]
+layout_mode = 2
+level_data = SubResource("Resource_s03yt")
+
+[node name="ButtonQuit" type="Button" parent="CanvasLayerUI"]
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 113.0
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayerUI/ButtonQuit" to="." method="_on_button_quit_pressed"]

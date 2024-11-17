@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3aqa3bj1osvp"
-path="res://.godot/imported/tex_metal_edge.png-5aaf6e458197a953a7afeee0e270fea4.ctex"
+uid="uid://dtfgs5wai4y6d"
+path="res://.godot/imported/Trophy.png-3c20dac55ae411d51097d6d62ba6be5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://examples/sharp_corner_tapering/assets/tex_metal_edge.png"
-dest_files=["res://.godot/imported/tex_metal_edge.png-5aaf6e458197a953a7afeee0e270fea4.ctex"]
+source_file="res://Images/Other/Trophy.png"
+dest_files=["res://.godot/imported/Trophy.png-3c20dac55ae411d51097d6d62ba6be5f.ctex"]
 
 [params]
 

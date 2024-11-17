@@ -1,3 +1,4 @@
+class_name Terrain
 extends Node2D
 
 var num_hills = 2
