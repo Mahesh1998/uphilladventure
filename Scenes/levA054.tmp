@@ -1,0 +1,124 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyjomns3lurid"]
+
+[ext_resource type="Script" path="res://Code/level_ui.gd" id="1_wm4m5"]
+[ext_resource type="Texture2D" uid="uid://bw2e3j7nt4b6b" path="res://Images/Pickups/Fuel.png" id="3_7ltju"]
+[ext_resource type="Texture2D" uid="uid://gg1bwwo34nyb" path="res://Images/Other/coin.png" id="3_bt7b1"]
+[ext_resource type="Texture2D" uid="uid://dvt5oavmlsem3" path="res://Images/Other/pedal_off.png" id="4_ew5c7"]
+[ext_resource type="Texture2D" uid="uid://cln7i7nchgvln" path="res://Images/Other/pause.png" id="5_2ubxs"]
+
+[node name="LevelUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_wm4m5")
+
+[node name="LabelDistance" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.5
+offset_right = 36.5
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_type_variation = &"Label_L"
+text = "0 m"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 384.0
+offset_bottom = 350.0
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_7ltju")
+expand_mode = 2
+
+[node name="FuelBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+show_percentage = false
+
+[node name="LowFuelAlarm" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CurrencyDisplayCoins" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CurrencyDisplayCoins"]
+layout_mode = 2
+texture = ExtResource("3_bt7b1")
+expand_mode = 2
+
+[node name="CoinsCollected" type="Label" parent="VBoxContainer/CurrencyDisplayCoins"]
+layout_mode = 2
+text = "0"
+
+[node name="CurrencyDisplayGems" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PedalL" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -384.0
+offset_right = 384.0
+grow_vertical = 0
+pivot_offset = Vector2(0, 384)
+texture = ExtResource("4_ew5c7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PedalR" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -384.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(0, 384)
+texture = ExtResource("4_ew5c7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="GaugeSpeed" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonPause" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 93.0
+grow_horizontal = 0
+theme_type_variation = &"TransparentButton"
+icon = ExtResource("5_2ubxs")
+icon_alignment = 1
+
+[connection signal="pressed" from="ButtonPause" to="." method="_on_button_pause_pressed"]
