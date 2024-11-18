@@ -33,7 +33,7 @@ func _physics_process(delta):
 		if $GameOverTimer.is_stopped():
 			$GameOverTimer.start()
 			
-	if $Head.rotation_degrees > 90 || $Head.rotation_degrees < -90 && !dead:
+	if $Car.global_rotation_degrees > 95 || $Car.global_rotation_degrees < -95 && !dead:
 		dead = true
 		$Head/Pinjoint2DHead.node_b = ""
 		
