@@ -9,7 +9,7 @@ var driving = 0
 
 func _ready():
 	wheels = get_tree().get_nodes_in_group("wheel")
-	#get_parent().update_fuel_UI(fuel)
+	get_tree().get_current_scene().get_node("Player").refuel()
 
 
 func _physics_process(delta):
