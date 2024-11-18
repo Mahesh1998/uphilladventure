@@ -1,6 +1,6 @@
 extends Control
 
-var PauseModalScene: PackedScene = preload("res://modal/pause_modal.tscn")
+var PauseModalScene: PackedScene = preload("res://Modal/pause_modal.tscn")
 var texture_off: Texture = preload("res://Images/Other/pedal_off.png")
 var texture_on: Texture = preload("res://Images/Other/pedal_on.png")
 
@@ -12,7 +12,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_pressed("ui_right"):
+		$PedalR.texture = texture_on
+	else:
+		$PedalR.texture = texture_off
+		
+	if Input.is_action_pressed("ui_left"):
+		$PedalL.texture = texture_on
+	else:
+		$PedalL.texture = texture_off
 
 
 func pause_game() -> void:
