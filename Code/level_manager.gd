@@ -8,3 +8,7 @@ func add_coins(amount):
 
 func update_fuel_UI(value):
 	$CanvasLayer/LevelUI/VBoxContainer/HBoxContainer/FuelBar.value = value
+	if value <= 30:
+		$CanvasLayer/LevelUI/VBoxContainer/HBoxContainer/AnimationPlayer.play("Alarm")
+	else:
+		$CanvasLayer/LevelUI/VBoxContainer/HBoxContainer/AnimationPlayer.play("idle")
