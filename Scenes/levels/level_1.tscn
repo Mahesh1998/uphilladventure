@@ -9,8 +9,8 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="6_x21hn"]
 [ext_resource type="Texture2D" uid="uid://bym4ndcufo3yr" path="res://Images/Levels/Level 1/DirtBG.png" id="7_lb8af"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="7_u4yrr"]
-[ext_resource type="Texture2D" uid="uid://df8jag8jkesew" path="res://Images/Levels/Level 2/rocks.png" id="8_2vqng"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="8_j32e6"]
+[ext_resource type="Texture2D" uid="uid://bebnwtgaisrrl" path="res://Images/Levels/Level 1/Grass.png" id="8_w83ur"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="9_5fkuw"]
 [ext_resource type="PackedScene" uid="uid://ctlnoebhxxv76" path="res://Scenes/coin.tscn" id="13_pg5vt"]
 [ext_resource type="PackedScene" uid="uid://2txonjihan8p" path="res://Scenes/fuel.tscn" id="14_5yh1y"]
@@ -508,7 +508,7 @@ curve_bake_interval = 20.0
 
 [sub_resource type="Resource" id="Resource_lssh2"]
 script = ExtResource("7_u4yrr")
-textures = Array[Texture2D]([ExtResource("8_2vqng")])
+textures = Array[Texture2D]([ExtResource("8_w83ur")])
 textures_corner_outer = Array[Texture2D]([])
 textures_corner_inner = Array[Texture2D]([])
 textures_taper_left = Array[Texture2D]([])
