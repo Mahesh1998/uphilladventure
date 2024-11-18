@@ -11,4 +11,7 @@ func update_fuel_UI(value):
 	if value <= 30:
 		$CanvasLayer/LevelUI/VBoxContainer/HBoxContainer/AnimationPlayer.play("Alarm")
 	else:
-		$CanvasLayer/LevelUI/VBoxContainer/HBoxContainer/AnimationPlayer.play("idle")
+		$CanvasLayer/LevelUI/VBoxContainer/HBoxContainer/AnimationPlayer.play("Idle")
+
+# func update_score(value):
+	
