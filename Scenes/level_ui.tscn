@@ -7,20 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dvt5oavmlsem3" path="res://Images/Other/pedal_off.png" id="4_ew5c7"]
 [ext_resource type="Texture2D" uid="uid://cln7i7nchgvln" path="res://Images/Other/pause.png" id="5_2ubxs"]
 
-[sub_resource type="Animation" id="Animation_yqa0h"]
-resource_name = "Idle"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LowFuelAlarm:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="Animation" id="Animation_1p87t"]
 resource_name = "Alarm"
 loop_mode = 1
@@ -34,6 +20,20 @@ tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="Animation" id="Animation_yqa0h"]
+resource_name = "Idle"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LowFuelAlarm:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_45qri"]
@@ -152,6 +152,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -384.0
 offset_top = -384.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(0, 384)
+texture = ExtResource("4_ew5c7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PedalB" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -649.0
+offset_top = -388.0
+offset_right = -265.0
+offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 0
 pivot_offset = Vector2(0, 384)

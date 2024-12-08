@@ -16,6 +16,11 @@ func _process(delta: float) -> void:
 		$PedalR.texture = texture_on
 	else:
 		$PedalR.texture = texture_off
+	
+	if Input.is_action_pressed("ui_down"):
+		$PedalB.texture = texture_on
+	else:
+		$PedalB.texture = texture_off
 		
 	if Input.is_action_pressed("ui_left"):
 		$PedalL.texture = texture_on

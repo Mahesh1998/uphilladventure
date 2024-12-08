@@ -6,6 +6,7 @@ var max_speed = 50
 var fuel = 100
 var dead = false
 var driving = 0
+var brake_force = 1000000
 
 func _ready():
 	wheels = get_tree().get_nodes_in_group("wheel")
@@ -32,6 +33,14 @@ func _physics_process(delta):
 	else:
 		if $GameOverTimer.is_stopped():
 			$GameOverTimer.start()
+	
+	if Input.is_action_pressed("ui_down"):
+		# Apply brake effect
+		for wheel in wheels:
+			if wheel.angular_velocity > 0:
+				wheel.apply_torque_impulse(-brake_force * delta) # Slow down forward motion
+			elif wheel.angular_velocity < 0:
+				wheel.apply_torque_impulse(brake_force * delta) # Slow down reverse motion
 			
 	if $Car.global_rotation_degrees > 95 || $Car.global_rotation_degrees < -95 && !dead:
 		dead = true
