@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4e8g2oxfp8x5"]
+
+[ext_resource type="Script" path="res://Scenes/level_complete.gd" id="1_nttft"]
+[ext_resource type="Texture2D" uid="uid://ou1mdrkksny3" path="res://Images/Other/finish_flag.png" id="2_wnwhb"]
+[ext_resource type="AudioStream" uid="uid://c025fh4dekh54" path="res://Audio/Fuel.wav" id="3_ejfl3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnmby"]
+size = Vector2(363, 360)
+
+[sub_resource type="Animation" id="Animation_v7upj"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_1qobs"]
+resource_name = "pickup"
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pickup")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ejfl3")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, -49.5, -60, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xbmja"]
+_data = {
+"RESET": SubResource("Animation_v7upj"),
+"pickup": SubResource("Animation_1qobs")
+}
+
+[node name="level_complete" type="Area2D"]
+script = ExtResource("1_nttft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wnwhb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_mnmby")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xbmja")
+}
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_level_complete_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
