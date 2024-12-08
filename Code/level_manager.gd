@@ -13,5 +13,5 @@ func update_fuel_UI(value):
 	else:
 		$CanvasLayer/LevelUI/VBoxContainer/HBoxContainer/AnimationPlayer.play("Idle")
 
-# func update_score(value):
-	
+func update_score(value):
+	$CanvasLayer/LevelUI/LabelDistance.text = str(value) + " m"

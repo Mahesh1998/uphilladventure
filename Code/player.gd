@@ -8,16 +8,15 @@ var dead = false
 var driving = 0
 var brake_force = 1000000
 
+var starting_position: Vector2
+var current_distance: float = 0
+var scale_factor: float = 50.0
+
 func _ready():
 	wheels = get_tree().get_nodes_in_group("wheel")
 	get_tree().get_current_scene().get_node("Player").refuel()
-
-func apply_brakes():
-	for wheel in wheels:
-		if wheel.angular_velocity > 0:
-			wheel.apply_torque_impulse(-brake_force) # Slow down forward motion
-		elif wheel.angular_velocity < 0:
-			wheel.apply_torque_impulse(brake_force) # Slow down reverse motion
+	starting_position = global_position
+	
 
 func _physics_process(delta):
 	driving = 0
@@ -42,7 +41,11 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("ui_down"):
 		# Apply brake effect
-		apply_brakes()
+		for wheel in wheels:
+			if wheel.angular_velocity > 0:
+				wheel.apply_torque_impulse(-brake_force * delta) # Slow down forward motion
+			elif wheel.angular_velocity < 0:
+				wheel.apply_torque_impulse(brake_force * delta) # Slow down reverse motion
 			
 	if $Car.global_rotation_degrees > 95 || $Car.global_rotation_degrees < -95 && !dead:
 		dead = true
@@ -53,14 +56,19 @@ func _physics_process(delta):
 		use_fuel(delta)
 	else:
 		$EngineSFX.pitch_scale = lerp($EngineSFX.pitch_scale, 1.0, 2 * delta)
+	update_distance()
+	get_parent().update_score(int(current_distance))
 
 func refuel():
 	fuel = 100
 	get_parent().update_fuel_UI(fuel)
 
+func update_distance():
+	# Calculate distance in meters
+	var pixel_distance = starting_position.distance_to(global_position)
+	current_distance = pixel_distance / scale_factor
+
 func finish_game():
-	# Stop the vehicle
-	apply_brakes()
 
 	# Disable player controls
 	dead = true
