@@ -13,7 +13,8 @@ radius = 88.1419
 [node name="Player" type="RigidBody2D" groups=["player"]]
 position = Vector2(-3, 0)
 collision_layer = 2
-gravity_scale = 30.0
+mass = 6.0
+gravity_scale = -5.0
 script = ExtResource("1_6kvdr")
 
 [node name="WheelHolder" type="PinJoint2D" parent="."]

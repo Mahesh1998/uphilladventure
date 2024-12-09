@@ -11,3 +11,7 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	get_tree().change_scene_to_file(level_data.scene_path)
+
+
+func _on_label_high_score_ready() -> void:
+	pass # Replace with function body.

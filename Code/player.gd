@@ -1,8 +1,8 @@
 extends RigidBody2D
 
 var wheels = []
-var speed = 60000
-var max_speed = 50
+var speed = 600000
+var max_speed = 55
 var fuel = 100
 var dead = false
 var driving = 0
@@ -76,7 +76,7 @@ func finish_game():
 	get_tree().change_scene_to_file(main_menu)
 
 func use_fuel(delta):
-	fuel -= 10 * delta
+	fuel -= 5 * delta
 	fuel = clamp(fuel, 0, 100)
 	get_parent().update_fuel_UI(fuel)
 
